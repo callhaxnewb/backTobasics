@@ -1,7 +1,7 @@
 var bgcolor;
 var button;
 var slider;
-var input;
+var nameInput;
 var nameP;
 
 function setup(){
@@ -12,7 +12,10 @@ function setup(){
     button.mousePressed(changeColor)
     createP("");
     slider=createSlider(10,100,4);
-    input=createInput('type your name')
+    nameInput=createInput('type your name')
+    nameP.mouseOver(mouseover);
+    nameP.mouseOut(mouseout);
+    nameInput.changed(updateText);
 }
 
 function draw(){
@@ -20,8 +23,19 @@ function draw(){
     fill(120,90,50);
     rectMode(CENTER);
     ellipse(width/2,height/2,slider.value()*3,slider.value()*3)
-    text(input.value(), 10,20);
-    nameP.html(input.value()); 
+    text(nameInput.value(), 10,20);
+    // nameP.html(input.value()); 
+}
+
+function updateText(){
+    nameP.html(nameInput.value());
+}
+function mouseover(){
+    nameP.html("mouse is over me, moove nigga!!")
+}
+
+function mouseout(){
+    nameP.html("hop on broski")
 }
 
 function changeColor(){
