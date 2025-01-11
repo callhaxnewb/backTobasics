@@ -15,7 +15,8 @@ function setup(){
     nameInput=createInput('type your name')
     nameP.mouseOver(mouseover);
     nameP.mouseOut(mouseout);
-    nameInput.changed(updateText);
+    nameInput.changed(updateText); //enter only
+    nameInput.input(updateText) //real time
 }
 
 function draw(){
