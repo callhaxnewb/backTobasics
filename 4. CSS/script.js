@@ -25,6 +25,7 @@ function draw(){
 
 function changeStyle(){
    txt.style("background-color","pink");
+   txt.style("color","black")
    txt.style("padding","24px");
 }
 
